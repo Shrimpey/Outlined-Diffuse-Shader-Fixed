@@ -35,10 +35,6 @@ v2f vert(appdata v) {
 	float3 norm   = normalize(mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal));
 	float2 offset = TransformViewToProjection(norm.xy);
 
-	float3 viewDir = o.pos.xyz - UNITY_MATRIX_IT_MV[1].xyz;
-
-	//o.pos.xy -= viewDir * 0.005;
-	//o.pos.xy += 2 * o.pos.z * _Outline;
 	o.color = _OutlineColor;
 	return o;
 }
