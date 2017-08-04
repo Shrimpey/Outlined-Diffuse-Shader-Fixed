@@ -32,8 +32,8 @@ v2f vert(appdata v) {
 
 	o.pos = UnityObjectToClipPos(v.vertex);
  
-	float3 norm   = normalize(mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal));
-	float2 offset = TransformViewToProjection(norm.xy);
+	//float3 norm   = normalize(mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal));
+	//float2 offset = TransformViewToProjection(norm.xy);
 
 	o.color = _OutlineColor;
 	return o;
