@@ -32,8 +32,8 @@ There are two main versions of the shader, I use them for different objects, som
 
 **CustomOutline-ConstantWidth.shader** - Same as custom one, but the outline is constant width despite the camera zoom.
 
-![Constant Width Zoomed In](/images/zoom.PNG?raw=true "Constant Width Zoomed In")
-![Constant Width Zoomed Out](/images/zoom2.PNG?raw=true "Constant Width Zoomed Out")
+![Constant Width Zoomed In](/images/zoom2.PNG?raw=true "Constant Width Zoomed In")
+![Constant Width Zoomed Out](/images/zoom.PNG?raw=true "Constant Width Zoomed Out")
 
 **Usage**: Same outline width despite the camera's zoom (ortho/perspective)
 **Problems**: Clipping on thick outlines on complex shapes.
