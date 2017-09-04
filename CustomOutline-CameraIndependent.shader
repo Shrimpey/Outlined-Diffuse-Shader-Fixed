@@ -4,8 +4,7 @@ Shader "Outlined/Diffuse Custom Camera Independent" {
 	Properties {
 		_Color ("Main Color", Color) = (.5,.5,.5,1)
 		_OutlineColor ("Outline Color", Color) = (0,0,0,1)
-		_Outline ("Outline width", Range (0, 1)) = .1
-		_Outline2 ("Second outline width parameter", Range (0, 1)) = .1
+		_Outline2 ("Outline width", Range (0, 1)) = .1
 		_MainTex ("Base (RGB)", 2D) = "white" { }
 	}
  
@@ -22,23 +21,44 @@ struct v2f {
 	float4 color : COLOR;
 };
  
-uniform float _Outline;
 uniform float _Outline2;
 uniform float4 _OutlineColor;
  
 v2f vert(appdata v) {
 	// just make a copy of incoming vertex data but scaled according to normal direction
 	v2f o;
-	float dist = length(ObjSpaceViewDir(v.vertex)); // <-- ADD: Distance from camera
-	v.vertex *= ( 1 + _Outline);
-	v.vertex *= dist * _Outline2;
+	float _Outline = 1;
+	//Camera position in world
+	float3 targetPos = _WorldSpaceCameraPos;
 
+	//Object position in world
+	float3 objectPos = mul (_Object2World, v.vertex).xyz;
+
+	//Vertex offset from center of the object
+	float3 offset = v.vertex.xyz * _Outline;
+
+	//Distance from the object to the camera
+	float dist = distance(objectPos, targetPos + offset);
+
+	//Forward vector of the camera
+	float3 viewDir = UNITY_MATRIX_IT_MV[2].xyz;
+
+	//Vector between vertex and offseted camera pos
+	float3 distVec = objectPos - (targetPos + offset);
+
+	//Angle between two vectors
+	float angle = distVec - distVec;
+	//float angle = atan2(normalize(cross(distVec,viewDir)), dot(distVec,viewDir));
+
+	//Real distance (to the plane 90 degrees to camera forward and object)
+	float finalDist = dist * cos(degrees(angle));
+
+	v.vertex *= ( 1 + _Outline);
+	v.vertex *= finalDist * _Outline2;
+
+	//v.vertex *= -1;
 
 	o.pos = UnityObjectToClipPos(v.vertex);
-	//o.pos.z += dist*0.01;
- 
-	//float3 norm   = normalize(mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal));
-	//float2 offset = TransformViewToProjection(norm.xy);
 
 	o.color = _OutlineColor;
 	return o;
