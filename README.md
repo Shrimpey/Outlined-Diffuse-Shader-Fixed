@@ -14,11 +14,11 @@ There are two main versions of the shader, I use them for different objects, som
 
 ---
 
-**CustomOutline-CameraIndependent.shader** - Same as custom one, but it is the same width despite the distance to the camera.      
+**CustomOutline-CameraIndependent.shader** - Same as custom one, but the outline is the same width despite the distance to the camera.      
 
 ---
 
-**CustomOutline-ConstantWidth.shader** - Same as custom one, but it's width is constant despite the camera zoom.
+**CustomOutline-ConstantWidth.shader** - Same as custom one, but the outline is constant width despite the camera zoom.
 
 ---
 
