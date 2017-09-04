@@ -14,14 +14,24 @@ There are two main versions of the shader, I use them for different objects, som
 ---
 
 **CustomOutline.shader** - My personal take on the outline shader. It increases the scale of the vertices instead of working with normals. 
+![Custom Outline](/images/custom.PNG?raw=true "Custom Outline")
+**Usage**: Hard edges/thick outlines
+**Problems**: Possible clipping on really thick edges.
 
 ---
 
-**CustomOutline-CameraIndependent.shader** - Same as custom one, but the outline is the same width despite the distance to the camera.      
+**CustomOutline-CameraIndependent.shader** - Same as custom one, but the outline is the same width despite the distance to the camera.     ![Camera Independend Close](/images/camera.PNG?raw=true "Camera Independend Close")
+![Camera Independend Far](/images/camera2.PNG?raw=true "Camera Independend Far")
+**Usage**: Same sized outline on perspective camera.
+**Problems**: Weird shapes on complex objects.
 
 ---
 
 **CustomOutline-ConstantWidth.shader** - Same as custom one, but the outline is constant width despite the camera zoom.
+![Constant Width Zoomed In](/images/zoom.PNG?raw=true "Constant Width Zoomed In")
+![Constant Width Zoomed Out](/images/zoom2.PNG?raw=true "Constant Width Zoomed Out")
+**Usage**: Same outline width despite the camera's zoom (ortho/perspective)
+**Problems**: Clipping on thick outlines on complex shapes.
 
 ---
 
