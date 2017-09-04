@@ -10,7 +10,7 @@ There are two main versions of the shader, I use them for different objects, som
 
 ---
 
-**CustomOutline.shader** - My personal take on the outline shader. It increases the size of the vertex instead of working with normals. 
+**CustomOutline.shader** - My personal take on the outline shader. It increases the scale of the vertices instead of working with normals. 
 
 ---
 
