@@ -7,7 +7,7 @@ There are two main versions of the shader, I use them for different objects, som
 
 # Shaders:                         
 **RegularOutline.shader** - Just an updated version of the shader from the wiki page, may still work in weird ways => if so, use custom one.
-![](https://imgur.com/WPhvObo)
+![Regular Outline](/images/standard.jpg?raw=true "Regular Outline")
 **Usage**: Curved shapes/thin outlines.
 **Problems**: Weird shapes on hard edges.
 
