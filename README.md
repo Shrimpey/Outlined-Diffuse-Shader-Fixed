@@ -6,7 +6,7 @@ It should is working fine in Unity 5.6.
 There are two main versions of the shader, I use them for different objects, sometimes the custom one works best and sometimes the regular one. Just try out both of them :)
 
 -----------------------------------------------------------------------
-|||                        *** Shaders: ***                         |||
+|||                            Shaders:                             |||
 ||| * RegularOutline.shader - Just an updated version of the shader |||
 |||                           from the wiki page, may still work    |||
 |||                           in weird ways => if so, use custom one|||
