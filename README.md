@@ -18,5 +18,9 @@ There are two main versions of the shader, I use them for different objects, som
 
 ---
 
+**CustomOutline-ConstantWidth.shader** - Same as custom one, but it's width is constant despite the camera zoom.
+
+---
+
 
 *UPDATE 03.09.2017 - Added camera independent version of custom shader.*
