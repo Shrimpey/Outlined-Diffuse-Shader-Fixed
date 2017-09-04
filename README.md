@@ -15,8 +15,8 @@ There are two main versions of the shader, I use them for different objects, som
 
 **CustomOutline.shader** - My personal take on the outline shader. It increases the scale of the vertices instead of working with normals. 
 ![Custom Outline](/images/custom.PNG?raw=true "Custom Outline")
-**Usage**: Hard edges/thin and thick outlines
-**Problems**: Possible clipping on really thick edges.
+**Usage**: All shapes
+**Problems**: Possible clipping on really thick edges/weird offsets if model's origin is not in center
 
 ---
 
