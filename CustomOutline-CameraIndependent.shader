@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 Shader "Outlined/Diffuse Custom Camera Independent" {
@@ -27,15 +29,15 @@ uniform float4 _OutlineColor;
 v2f vert(appdata v) {
 	// just make a copy of incoming vertex data but scaled according to normal direction
 	v2f o;
-	float _Outline = 1;
+
 	//Camera position in world
 	float3 targetPos = _WorldSpaceCameraPos;
 
 	//Object position in world
-	float3 objectPos = mul (_Object2World, v.vertex).xyz;
+	float3 objectPos = mul (unity_ObjectToWorld, v.vertex).xyz;
 
 	//Vertex offset from center of the object
-	float3 offset = v.vertex.xyz * _Outline;
+	float3 offset = v.vertex.xyz;
 
 	//Distance from the object to the camera
 	float dist = distance(objectPos, targetPos + offset);
@@ -53,7 +55,7 @@ v2f vert(appdata v) {
 	//Real distance (to the plane 90 degrees to camera forward and object)
 	float finalDist = dist * cos(degrees(angle));
 
-	v.vertex *= ( 1 + _Outline);
+	//v.vertex *= ( 2 );
 	v.vertex *= finalDist * _Outline2;
 
 	//v.vertex *= -1;
