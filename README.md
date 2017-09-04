@@ -41,4 +41,5 @@ There are two main versions of the shader, I use them for different objects, som
 ---
 
 
-*UPDATE 03.09.2017 - Added camera independent version of custom shader.*
+*UPDATE 03.09.2017 - Added camera independent version of custom shader*
+*UPDATE 04.09.2017 - Added constant size version of custom shader | updated README to include images*
