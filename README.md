@@ -20,8 +20,9 @@ There are two main versions of the shader, I use them for different objects, som
 
 ---
 
-**CustomOutline-CameraIndependent.shader** - Same as custom one, but the outline is the same width despite the distance to the camera.   ![Camera Independend Close](/images/camera.PNG?raw=true "Camera Independend Close")
+**CustomOutline-CameraIndependent.shader** - Same as custom one, but the outline is the same width despite the distance to the camera. 
 
+![Camera Independend Close](/images/camera.PNG?raw=true "Camera Independend Close")
 ![Camera Independend Far](/images/camera2.PNG?raw=true "Camera Independend Far")
 
 **Usage**: Same sized outline on perspective camera.
@@ -30,6 +31,7 @@ There are two main versions of the shader, I use them for different objects, som
 ---
 
 **CustomOutline-ConstantWidth.shader** - Same as custom one, but the outline is constant width despite the camera zoom.
+
 ![Constant Width Zoomed In](/images/zoom.PNG?raw=true "Constant Width Zoomed In")
 ![Constant Width Zoomed Out](/images/zoom2.PNG?raw=true "Constant Width Zoomed Out")
 
