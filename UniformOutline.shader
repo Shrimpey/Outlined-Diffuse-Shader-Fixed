@@ -6,32 +6,22 @@ Shader "Outlined/Uniform"
 		_MainTex ("Texture", 2D) = "white" {}
 		_OutlineColor ("Outline color", Color) = (0,0,0,1)
 		_OutlineWidth ("Outlines width", Range (0.0, 2.0)) = 1.1
-
-		[Toggle(OVERLAY)]
-        _Overlay ("Overlay other meshes", Float) = 0
 	}
 
 	CGINCLUDE
 	#include "UnityCG.cginc"
 
-	#pragma shader_feature OVERLAY
-
 	struct appdata
 	{
 		float4 vertex : POSITION;
-		float2 uv : TEXCOORD0;
-		float3 normal : NORMAL;
 	};
 
 	struct v2f
 	{
 		float4 pos : POSITION;
-		float3 normal : NORMAL;
-		float4 col : COLOR;
 	};
 
 	uniform float _OutlineWidth;
-	uniform float _Offset;
 	uniform float4 _OutlineColor;
 	uniform sampler2D _MainTex;
 	uniform float4 _Color;
@@ -71,7 +61,6 @@ Shader "Outlined/Uniform"
 		}
 
 		Tags{ "Queue" = "Geometry"}
-		//ZTest Less
 
 		CGPROGRAM
 		#pragma surface surf Lambert
