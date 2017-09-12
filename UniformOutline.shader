@@ -76,4 +76,5 @@ Shader "Outlined/Uniform"
 		}
 		ENDCG
 	}
+	Fallback "Diffuse"
 }
