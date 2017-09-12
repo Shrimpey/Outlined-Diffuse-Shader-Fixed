@@ -40,7 +40,7 @@ There are two main versions of the shader, I use them for different objects, som
 
 ---
 
-**UniformOutline.shader** - Made from scratch, works just like CustomOutline except the scaling is more uniform - width of the outline should be more consistent on irregular meshes. 
+**UniformOutline.shader** - Made from scratch, works just like CustomOutline except the scaling is more uniform - width of the outline should be more consistent on irregular meshes (easy to notice when comparing the wheels of the cart from the image below to the Custom Outline shader image). 
 
 ![Uniform Outline](/images/Uniform.PNG?raw=true "Uniform Outline")
 
