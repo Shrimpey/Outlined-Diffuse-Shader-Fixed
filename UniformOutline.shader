@@ -30,7 +30,7 @@ Shader "Outlined/Uniform"
 
 	SubShader
 	{
-		Tags{ "Queue" = "Geometry" "IgnoreProjector" = "True" }
+		Tags{ "Queue" = "Geometry + 1" "IgnoreProjector" = "True" }
 
 		Pass //Outline
 		{
