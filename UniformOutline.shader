@@ -30,12 +30,12 @@ Shader "Outlined/Uniform"
 
 	SubShader
 	{
-		Tags{ "Queue" = "Geometry + 1" "IgnoreProjector" = "True" }
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True" }
 
 		Pass //Outline
 		{
 			ZWrite Off
-			Cull Front
+			Cull Back
 			CGPROGRAM
 
 			#pragma vertex vert
