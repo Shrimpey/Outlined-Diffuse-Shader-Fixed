@@ -60,3 +60,5 @@ Download **OutlineShowcase.unitypackage** and import it to Unity project to see 
 *UPDATE 04.09.2017 - Added constant size version of custom shader | updated README to include images*
 
 *UPDATE 12.09.2017 - Added uniform outline shader*
+
+*UPDATE 23.12.2017 - Fixed some minor issues with custom, regular and uniform shaders | added showcase unity package*
