@@ -25,11 +25,12 @@ uniform float4 _OutlineColor;
 v2f vert(appdata v) {
 	// just make a copy of incoming vertex data but scaled according to normal direction
 	v2f o;
-
-	v.vertex *= -( 1 + _Outline);
-
-	o.pos = UnityObjectToClipPos(v.vertex);
-
+	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+ 
+	float3 norm   = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
+	float2 offset = TransformViewToProjection(norm.xy);
+ 
+	o.pos.xy += offset * o.pos.z * _Outline;
 	o.color = _OutlineColor;
 	return o;
 }
@@ -58,10 +59,10 @@ ENDCG
 		Pass {
 			Name "OUTLINE"
 			Tags { "Queue" = "Transparent" "IgnoreProjector" = "True"}
-			Cull Back
+			Cull Front
 			ZWrite Off
 			//ZTest Less
-			Offset 1, 1
+			//Offset 1, 1
  
 			CGPROGRAM
 			#pragma vertex vert
