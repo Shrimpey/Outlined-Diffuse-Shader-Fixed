@@ -5,6 +5,8 @@ It should be working fine in Unity 5.6 and above.
 **Guide:**
 I suggest you trying **UniformOutline.shader** and then **CustomOutline.shader**. They should work fine for simple objects/complex objects with proper origin. If they fail - try out the **RegularOutline.shader**. The rest of the shaders are for really specyfic purposes, so unless you know what you're doing you probably shouldn't be using them :)
 
+**Showcase:**
+Download **OutlineShowcase.unitypackage** and import it to Unity project to see RegularOutline, CustomOutline and UniformOutline shaders in action.
 
 **Shaders:**
 
