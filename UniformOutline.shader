@@ -44,7 +44,7 @@ Shader "Outlined/Uniform"
 			v2f vert(appdata v)
 			{
 				appdata original = v;
-				v.vertex.xyz += _OutlineWidth * normalize(v.vertex.xyz);
+				v.vertex.xyzw += _OutlineWidth * normalize(v.vertex.xyzw);
 
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
