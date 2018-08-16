@@ -2,6 +2,10 @@
 This is a fixed version of diffused outline shader from http://wiki.unity3d.com/index.php/Outlined_Diffuse_3
 It should be working fine in Unity 5.6 and above.
 
+# Important update:
+**A new version of the outline shader is available, go to: https://github.com/Shrimpey/UltimateOutline
+Use the updated shader, come back here only if you find it to be working weirdly on your custom models and try some of the ones mentioned below.**
+
 **Guide:**
 I suggest you trying **UniformOutline.shader** and then **CustomOutline.shader**. They should work fine for simple objects/complex objects with proper origin. If they fail - try out the **RegularOutline.shader**. The rest of the shaders are for really specyfic purposes, so unless you know what you're doing you probably shouldn't be using them :)
 
